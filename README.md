@@ -1,7 +1,7 @@
 <h2>Good_Robot</h2>
 Good_Robot is a Discord bot written in Python. Utility and admin bots are dime-a-dozen, so I made this with functions that I couldn't find in others. Do note that it is an ongoing work in progress. Current functions:
-1. Channel logging: makes logging messages off the channel a breeze.
-2. Channel migration assistant: assists in migrating channels from one server to another.
+<li>1. Channel logging: makes logging messages off the channel a breeze.</li>
+<li>2. Channel migration assistant: assists in migrating channels from one server to another.</li></br>
 …and many more!</br></br>
 
 Command parsing for this program was done using COMPARSE: a flexible commandline parsing module. Designed to pick out ATTRIBUTES and assign VALUES to them from a message containing many un-formatted attributes/variables.
@@ -49,7 +49,7 @@ Command parsing for this program was done using COMPARSE: a flexible commandline
 </ul>
 <blockquote>[if the value for the variable is not specified, then its specified default value is used]
 
-<strong>optional arguments: --h, --help [show this help message and exit]</strong></blockquote>
+<strong>optional arguments: --h, --help [show this help message and exit]</strong></blockquote></br>
 <em>Example use:</em>
 
 To log channel messages in 'example.txt', filtering only messages that contain 'apple', excluding 'pie' and 'candy', not log attachments while logging author names, one would type the following (Note: Good_Robot is not strict on syntax. Hence, you could pass "!log_this_channel example.txt" instead of "!log_this_channel='example.txt'"):
