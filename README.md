@@ -50,7 +50,7 @@ Command parsing for this program was done using COMPARSE: a flexible commandline
 <blockquote>[if the value for the variable is not specified, then its specified default value is used]
 
 <strong>optional arguments: --h, --help [show this help message and exit]</strong></blockquote></br>
-<em>Example use:</em>
+<i>Example use:</i>
 
 To log channel messages in 'example.txt', filtering only messages that contain 'apple', excluding 'pie' and 'candy', not log attachments while logging author names, one would type the following (Note: Good_Robot is not strict on syntax. Hence, you could pass "!log_this_channel example.txt" instead of "!log_this_channel='example.txt'"):
 
