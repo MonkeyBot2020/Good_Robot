@@ -1,3 +1,4 @@
+<h3>Good_Robot</h3>
 Good_Robot is a Discord bot written in Python. Utility and admin bots are dime-a-dozen, so I made this with functions that I couldn't find in others. Do note that it is an ongoing work in progress. Current functions:
 1. Channel logging: makes logging messages off the channel a breeze.
 2. Channel migration assistant: assists in migrating channels from one server to another.
