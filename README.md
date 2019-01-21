@@ -1,12 +1,13 @@
 <h2>Good_Robot</h2>
 Good_Robot is a Discord bot written in Python. Utility and admin bots are dime-a-dozen, so I made this with functions that I couldn't find in others. Do note that it is an ongoing work in progress. Current functions:
-<li>Channel logging: makes logging messages off the channel a breeze.</li>
-<li>Channel migration assistant: assists in migrating channels from one server to another.</li>
-…and many more!</br></br>
+<li>1. Channel logging: makes logging messages off the channel a breeze.</li>
+<li>2. Channel migration assistant: assists in migrating channels from one server to another</li>
+<li>3. Profanity filter (filter swear words): a basic filter to help protect your channel</li>
+…and more, with new features added regularly!</br>
+<blockquote>Good_Robot requires the <em>manage_messages</em> permission to apply profanity filter to the channel.</blockquote>
+Command parsing for this program was done using COMPARSE: a flexible commandline parsing module. Designed to pick out ATTRIBUTES and assign VALUES to them from a message containing many un-formatted attributes/variables.
 
-Command parsing for this program was done using COMPARSE: a flexible commandline parsing module. Designed to pick out ATTRIBUTES and assign VALUES to them from a message containing many un-formatted attributes/variables.</br>
-
-<em>Usage: </em></br>
+<em>Usage: </em>
 <code>!log_this_channel 'logs.txt'</code>
 <ul>
 	<li>Logs the channel the administrator is currently in to a specified file. Note, only administrators may use this. USAGE: log_this_channel='logs.txt' See below for options.</li>
@@ -47,11 +48,17 @@ Command parsing for this program was done using COMPARSE: a flexible commandline
 	<li>VARIABLE TYPE: str</li>
 	<li>ALTERNATIVES: -!print_to_channel=PRINT_TO_CHANNEL, -!print_to_channel:PRINT_TO_CHANNEL, -!print_to_channel PRINT_TO_CHANNEL</li>
 </ul>
+<code>!profanity_filter=False</code>
+<ul>
+	<li>Filters swear words and warns the offending user.</li>
+	<li>USAGE: !profanity_filter=False</li>
+	<li>VARIABLE TYPE: bool</li>
+	<li>ALTERNATIVES: -!profanity_filter=PROFANITY_FILTER, -!profanity_filter:PROFANITY_FILTER, -!profanity_filter PROFANITY_FILTER</li>
+</ul>
 <blockquote>[if the value for the variable is not specified, then its specified default value is used]
 
-<strong>optional arguments: --h, --help [show this help message and exit]</strong></blockquote></br>
-
-<i>Example use:</i><br>
+<strong>optional arguments: --h, --help [show this help message and exit]</strong></blockquote>
+<i>Example use:</i>
 To log channel messages in 'example.txt', filtering only messages that contain 'apple', excluding 'pie' and 'candy', not log attachments while logging author names, one would type the following (Note: Good_Robot is not strict on syntax. Hence, you could pass "!log_this_channel example.txt" instead of "!log_this_channel='example.txt'"):
 
 <code>!log_this_channel 'example.txt', content_filter 'apple', exclude_content 'pie, candy', log_attachments False, log_author True</code>
