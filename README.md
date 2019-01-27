@@ -7,7 +7,7 @@ Good_Robot is a Discord bot written in Python. Utility and admin bots are dime-a
 <blockquote>Good_Robot requires the <em>manage_messages</em> permission to apply profanity filter to the channel.</blockquote>
 Command parsing for this program was done using COMPARSE: a flexible commandline parsing module. Designed to pick out ATTRIBUTES and assign VALUES to them from a message containing many un-formatted attributes/variables.</br></br>
 
-<em>Usage: </em>
+<em>Usage: </em></br>
 <code>!log_this_channel 'logs.txt'</code>
 <ul>
 	<li>Logs the channel the administrator is currently in to a specified file. Note, only administrators may use this. USAGE: log_this_channel='logs.txt' See below for options.</li>
@@ -73,7 +73,7 @@ Command parsing for this program was done using COMPARSE: a flexible commandline
 <blockquote>[if the value for the variable is not specified, then its specified default value is used]
 
 <strong>optional arguments: --h, --help [show this help message and exit]</strong></blockquote></br></br>
-<i>Example use:</i>
+<i>Example use:</i></br>
 To log channel messages in 'example.txt', filtering only messages that contain 'apple', excluding 'pie' and 'candy', not log attachments while logging author names, one would type the following (Note: Good_Robot is not strict on syntax. Hence, you could pass "!log_this_channel example.txt" instead of "!log_this_channel='example.txt'"):
 
 <code>!log_this_channel 'example.txt', content_filter 'apple', exclude_content 'pie, candy', log_attachments False, log_author True</code>
