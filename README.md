@@ -5,7 +5,7 @@ Good_Robot is a Discord bot written in Python. Utility and admin bots are dime-a
 <li>Profanity filter (filter swear words): a basic filter to help protect your channel</li>
 …and more, with new features added regularly!</br></br>
 <blockquote>Good_Robot requires the <em>manage_messages</em> permission to apply profanity filter to the channel.</blockquote>
-To migrate channels between servers, simply log the channel to a text file and simply print it to the new channel using the <code>!print_to_channel</code> command. Command parsing for this program was done using COMPARSE: a flexible commandline parsing module. Designed to pick out ATTRIBUTES and assign VALUES to them from a message containing many un-formatted attributes/variables.</br></br>
+To migrate channels between servers, simply log the channel to a text file (using the <code>!log_this_channel</code> command) and simply print it to the new channel using the <code>!print_to_channel</code> command. Command parsing for this program was done using COMPARSE: a flexible commandline parsing module. Designed to pick out ATTRIBUTES and assign VALUES to them from a message containing many un-formatted attributes/variables.</br></br>
 
 <em>Usage: </em></br>
 <code>!log_this_channel 'logs.txt'</code>
