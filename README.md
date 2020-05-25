@@ -31,12 +31,12 @@ To migrate channels between servers, simply log the channel to a text file (usin
 + limit: limits number of messages logged; if 'None', logs the entire channel; default: 'None'
 + from: obtains messages AFTER specified date
 + to: obtains messages BEFORE specified date
-!print - Prints message attachment to channel. Options:
+<br/>!print - Prints message attachment to channel. Options:
 + file_name: log file to printed to the channel; default: 'logs.txt'
 
 <em>Statistics: </em></br>
 !members - Displays member statistics; alias: ['member']
-!show_stats - Displays server statistics over the last week; alias: ['statistics', 'show_stat']
+<br/>!show_stats - Displays server statistics over the last week; alias: ['statistics', 'show_stat']
 
 <em>Example: </em></br>
 <code>!log 'example.txt', content_filter 'apple', exclude_content 'pie, candy', log_attachments False, log_author True</code>
