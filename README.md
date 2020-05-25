@@ -31,7 +31,8 @@ To migrate channels between servers, simply log the channel to a text file (usin
 + limit: limits number of messages logged; if 'None', logs the entire channel; default: 'None'
 + from: obtains messages AFTER specified date
 + to: obtains messages BEFORE specified date
-<br/>!print - Prints message attachment to channel. Options:
+
+!print - Prints message attachment to channel. Options:
 + file_name: log file to printed to the channel; default: 'logs.txt'
 
 <em>Statistics: </em></br>
