@@ -1,79 +1,40 @@
 <h2>Good_Robot</h2>
-Good_Robot is a Discord bot written in Python. Utility and admin bots are dime-a-dozen, so I made this with functions that I couldn't find in others. Do note that it is an ongoing work in progress. Current functions:
+Good_Robot is a Python Discord bot designed to streamline server management and channel migration. Utility and admin bots are dime-a-dozen, so I made this with functions that I couldn't find in others. Do note that it is an ongoing work in progress. Current functions:
 <li>Channel logging: makes logging messages off the channel a breeze</li>
 <li>Channel migration assistant: assists in migrating channels from one server to another</li>
 <li>Profanity filter (filter swear words): a basic filter to help protect your channel</li>
+<li>Statistics: helpful stats about the server and members</li>
 …and more, with new features added regularly!</br></br>
 <blockquote>Good_Robot requires the <em>manage_messages</em> permission to apply profanity filter to the channel.</blockquote>
-To migrate channels between servers, simply log the channel to a text file (using the <code>!log_this_channel</code> command) and simply print it to the new channel using the <code>!print_to_channel</code> command. Command parsing for this program was done using COMPARSE: a flexible commandline parsing module. Designed to pick out ATTRIBUTES and assign VALUES to them from a message containing many un-formatted attributes/variables.</br></br>
+To migrate channels between servers, simply log the channel to a text file (using the <code>!log</code> command) and simply print it to the new channel using the <code>!print</code> command. Command parsing for this program was done using COMPARSE: a flexible commandline parsing module. Designed to pick out ATTRIBUTES and assign VALUES to them from a message containing many un-formatted attributes/variables.</br></br>
 
-<em>Usage: </em></br>
-<code>!log_this_channel 'logs.txt'</code>
-<ul>
-	<li>Logs the channel the administrator is currently in to a specified file. Note, only administrators may use this. USAGE: log_this_channel='logs.txt' See below for options.</li>
-	<li>VARIABLE TYPE: str</li>
-	<li>DEFAULT: 'logs.txt'</li>
-	<li>ALTERNATIVES: -!log_this_channel=LOG_THIS_CHANNEL, -!log_this_channel:LOG_THIS_CHANNEL, -!log_this_channel LOG_THIS_CHANNEL</li>
-</ul>
-<code>!log_this_channel, content_filter=None</code>
-<ul>
-	<li>OPTIONAL PARAMETER: Filter log by content. USAGE: !log_this_channel, content_filter=None</li>
-	<li>VARIABLE TYPE: str</li>
-	<li>DEFAULT: None</li>
-	<li>ALTERNATIVES: -content_filter=CONTENT_FILTER, -content_filter:CONTENT_FILTER, -content_filter CONTENT_FILTER</li>
-</ul>
-<code>!log_this_channel, exclude_content=None</code>
-<ul>
-	<li>OPTIONAL PARAMETER: Exclude content from log.</li>
-	<li>USAGE: !log_this_channel, exclude_content=None</li>
-	<li>VARIABLE TYPE: str</li>
-	<li>DEFAULT: None</li>
-	<li>ALTERNATIVES: -exclude_content=EXCLUDE_CONTENT, -exclude_content:EXCLUDE_CONTENT, -exclude_content EXCLUDE_CONTENT</li>
-</ul>
-<code>!log_this_channel, log_attachments=True</code>
-<ul>
-	<li>OPTIONAL PARAMETER: Logs attachments.</li>
-	<li>USAGE: !log_this_channel, log_attachments=True</li>
-	<li>VARIABLE TYPE: bool</li>
-	<li>DEFAULT: True</li>
-	<li>ALTERNATIVES: -log_attachments=LOG_ATTACHMENTS, -log_attachments:LOG_ATTACHMENTS, -log_attachments LOG_ATTACHMENTS</li>
-</ul>
-<code>!log_this_channel, log_author=False</code>
-<ul>
-	<li>OPTIONAL PARAMETER: Logs author of message.</li>
-	<li>USAGE: !log_this_channel, log_author=False</li>
-	<li>VARIABLE TYPE: bool</li>
-	<li>DEFAULT: False</li>
-	<li>ALTERNATIVES: -log_author=LOG_AUTHOR, -log_author:LOG_AUTHOR, -log_author LOG_AUTHOR</li>
-</ul>
-<code>!log_this_channel, log_limit=100</code>
-<ul>
-	<li>OPTIONAL PARAMETER: Limits number of messages logged.</li>
-	<li>USAGE: !log_this_channel, log_limit=100</li>
-	<li>VARIABLE TYPE: int</li>
-	<li>DEFAULT: 100</li>
-	<li>ALTERNATIVES: -log_limit=LOG_LIMIT, -log_limit:LOG_LIMIT, -log_limit LOG_LIMIT</li>
-</ul>
-<code>!print_to_channel 'logs.txt'</code>
-<ul>
-	<li>Print the message attachments to the channel the administrator is currently in. Note, only administrators may use this.</li>
-	<li>USAGE: !print_to_channel</li>
-	<li>VARIABLE TYPE: str</li>
-	<li>DEFAULT: None</li>
-	<li>ALTERNATIVES: -!print_to_channel=PRINT_TO_CHANNEL, -!print_to_channel:PRINT_TO_CHANNEL, -!print_to_channel PRINT_TO_CHANNEL</li>
-</ul>
-<code>!profanity_filter=False</code>
-<ul>
-	<li>Filters swear words and warns the offending user.</li>
-	<li>USAGE: !profanity_filter=False</li>
-	<li>VARIABLE TYPE: bool</li>
-	<li>DEFAULT: False</li>
-	<li>ALTERNATIVES: -!profanity_filter=PROFANITY_FILTER, -!profanity_filter:PROFANITY_FILTER, -!profanity_filter PROFANITY_FILTER</li>
-</ul>
-<blockquote>[if the value for the variable is not specified, then its specified default value is used]
+<em>General_Functions: </em></br>
+!about - Info about this bot
+!show_id - Shows the message author's id; alias: ['my_id', 'id']
+!logout - Logs the bot out of the server (admin only!)
 
-<strong>optional arguments: --h, --help [show this help message and exit]</strong></blockquote></br></br>
-<i>Example use:</i></br>
-To log channel messages in 'example.txt', filtering only messages that contain 'apple', excluding 'pie' and 'candy', not log attachments while logging author names, one would type the following (Note: Good_Robot is not strict on syntax. Hence, you could pass "!log_this_channel example.txt" instead of "!log_this_channel='example.txt'"):
+<em>Help: </em></br>
+!help - This help menu
 
-<code>!log_this_channel 'example.txt', content_filter 'apple', exclude_content 'pie, candy', log_attachments False, log_author True</code>
+<em>Profanity_Filter: </em></br>
+!toggle - Toggles profanity filter ON/OFF (admin only!); alias: ['toggle_filter']
+
+<em>Recorder: </em></br>
+!log - Logs the channel to a text file (files cached for 5 days). Options:
++ file_name: logs channel to file; default: 'logs.txt'
++ filter: filter log by content; default: 'None'
++ exclude: exclude content from log; default: 'None'
++ log_attachments: logs attachments; default: 'True'
++ log_author: logs message author; default: 'True'
++ limit: limits number of messages logged; if 'None', logs the entire channel; default: 'None'
++ from: obtains messages AFTER specified date
++ to: obtains messages BEFORE specified date
+!print - Prints message attachment to channel. Options:
++ file_name: log file to printed to the channel; default: 'logs.txt'
+
+<em>Statistics: </em></br>
+!members - Displays member statistics; alias: ['member']
+!show_stats - Displays server statistics over the last week; alias: ['statistics', 'show_stat']
+
+<em>Example: </em></br>
+<code>!log 'example.txt', content_filter 'apple', exclude_content 'pie, candy', log_attachments False, log_author True</code>
